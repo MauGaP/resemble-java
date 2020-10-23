@@ -1,6 +1,6 @@
-package radomik.com.github.resemble.analysis;
+package com.resemble.analysis;
 
-import radomik.com.github.resemble.pixel.impl.PixelImpl;
+import com.resemble.pixel.impl.PixelImpl;
 
 public class ResembleAnaylsisOptionsTemplates {
 

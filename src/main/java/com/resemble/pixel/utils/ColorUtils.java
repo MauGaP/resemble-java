@@ -1,6 +1,6 @@
-package radomik.com.github.resemble.pixel.utils;
+package com.resemble.pixel.utils;
 
-import radomik.com.github.resemble.pixel.Pixel;
+import com.resemble.pixel.Pixel;
 import java.awt.image.BufferedImage;
 
 public abstract class ColorUtils {

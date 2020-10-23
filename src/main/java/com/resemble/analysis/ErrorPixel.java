@@ -1,8 +1,9 @@
-package radomik.com.github.resemble.analysis;
+package com.resemble.analysis;
 
-import radomik.com.github.resemble.pixel.Pixel;
-import radomik.com.github.resemble.analysis.ResembleAnalysisOptions;
-import static radomik.com.github.resemble.pixel.utils.ColorUtils.*;
+import com.resemble.pixel.utils.ColorUtils;
+import com.resemble.pixel.Pixel;
+
+import static com.resemble.pixel.utils.ColorUtils.*;
 import java.awt.image.BufferedImage;
 
 public enum ErrorPixel {
@@ -12,7 +13,7 @@ public enum ErrorPixel {
     }),
     MOVEMENT((BufferedImage destImg, int x, int y, Pixel d1, Pixel d2, ResembleAnalysisOptions options) -> {
         Pixel e = options.getErrorPixelColor();
-        setARGB(destImg, x, y,
+        ColorUtils.setARGB(destImg, x, y,
                 d2.getAlpha().getValue(),
                 ((d2.getRed().getValue() * (e.getRed().getValue() / 255)) + e.getRed().getValue()) / 2,
                 ((d2.getGreen().getValue() * (e.getGreen().getValue() / 255)) + e.getGreen().getValue()) / 2,
@@ -21,15 +22,15 @@ public enum ErrorPixel {
     }),
     FLAT_DIFFERENCE_INTENSITY((BufferedImage destImg, int x, int y, Pixel d1, Pixel d2, ResembleAnalysisOptions options) -> {
         Pixel e = options.getErrorPixelColor();
-        setARGB(destImg, x, y,
-                colorsDistanceRGB(d1, d2), e.getRed().getValue(), e.getGreen().getValue(), e.getBlue().getValue());
+        ColorUtils.setARGB(destImg, x, y,
+                ColorUtils.colorsDistanceRGB(d1, d2), e.getRed().getValue(), e.getGreen().getValue(), e.getBlue().getValue());
     }),
     MOVEMENT_DIFFERENCE_INTENSITY((BufferedImage destImg, int x, int y, Pixel d1, Pixel d2, ResembleAnalysisOptions options) -> {
         Pixel e = options.getErrorPixelColor();
 
-        double ratio = colorsDistanceRGB(d1, d2) / 255.0 * 0.8;
+        double ratio = ColorUtils.colorsDistanceRGB(d1, d2) / 255.0 * 0.8;
         double ratio1 = 1.0 - ratio;
-        setARGB(destImg, x, y,
+        ColorUtils.setARGB(destImg, x, y,
                 d2.getAlpha().getValue(),
                 (int) (ratio1 * ((d2.getRed().getValue() * (e.getRed().getValue() / 255)) + ratio * e.getRed().getValue())),
                 (int) (ratio1 * ((d2.getGreen().getValue() * (e.getGreen().getValue() / 255)) + ratio * e.getGreen().getValue())),

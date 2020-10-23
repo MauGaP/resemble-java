@@ -1,9 +1,9 @@
-package radomik.com.github.resemble.analysis;
+package com.resemble.analysis;
 
-import radomik.com.github.resemble.pixel.Pixel;
-import radomik.com.github.resemble.pixel.impl.PixelImpl;
-import radomik.com.github.resemble.pixel.utils.ColorUtils;
-import radomik.com.github.resemble.utils.ImageUtils;
+import com.resemble.pixel.Pixel;
+import com.resemble.pixel.impl.PixelImpl;
+import com.resemble.pixel.utils.ColorUtils;
+import com.resemble.utils.ImageUtils;
 
 import java.awt.image.BufferedImage;
 import java.time.Instant;

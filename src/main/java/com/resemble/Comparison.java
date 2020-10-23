@@ -1,21 +1,22 @@
-package radomik.com.github.resemble;
+package com.resemble;
 
-import radomik.com.github.resemble.analysis.ResembleAnaylsisOptionsTemplates;
-import radomik.com.github.resemble.gui.ImageWindow;
-import radomik.com.github.resemble.analysis.ResembleAnalysis;
-import radomik.com.github.resemble.analysis.ResembleAnalysisOptions;
-import radomik.com.github.resemble.analysis.ResembleAnalysisResults;
-import radomik.com.github.resemble.parser.ResembleParser;
-import radomik.com.github.resemble.parser.ResembleParserData;
-import radomik.com.github.resemble.utils.ImageUtils;
+import com.resemble.analysis.ResembleAnalysis;
+import com.resemble.analysis.ResembleAnalysisOptions;
+import com.resemble.analysis.ResembleAnalysisResults;
+import com.resemble.analysis.ResembleAnaylsisOptionsTemplates;
+import com.resemble.gui.ImageWindow;
+import com.resemble.utils.ImageUtils;
+import com.resemble.parser.ResembleParser;
+import com.resemble.parser.ResembleParserData;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.UnsupportedLookAndFeelException;
 
-public class TestApp {
+public class Comparison {
 
-    public static void main(String[] args) throws IOException {
+    public static void compare(String[] args) throws IOException {
         if (args.length != 2) {
             System.out.println("Requires arguments: <image path 1> <image path 2>");
             System.exit(1);

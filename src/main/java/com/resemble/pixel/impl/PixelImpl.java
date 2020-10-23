@@ -1,4 +1,4 @@
-package radomik.com.github.resemble.pixel.impl;
+package com.resemble.pixel.impl;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,14 +8,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import com.resemble.pixel.utils.ColorUtils;
 import org.apache.commons.lang3.tuple.Pair;
-import radomik.com.github.resemble.pixel.Pixel;
-import radomik.com.github.resemble.pixel.PixelChannel;
-import radomik.com.github.resemble.pixel.PixelChannel.Channel;
-import radomik.com.github.resemble.pixel.PixelChannelChangeListener;
-import radomik.com.github.resemble.pixel.PixelChannelNeededListener;
-import radomik.com.github.resemble.pixel.utils.ColorUtils;
-import static radomik.com.github.resemble.pixel.utils.ColorUtils.*;
+import com.resemble.pixel.Pixel;
+import com.resemble.pixel.PixelChannel;
+import com.resemble.pixel.PixelChannel.Channel;
+import com.resemble.pixel.PixelChannelChangeListener;
+import com.resemble.pixel.PixelChannelNeededListener;
 
 public class PixelImpl implements Pixel {
 
@@ -172,7 +172,7 @@ public class PixelImpl implements Pixel {
     @JsonIgnore
     public void setARGB(int argb) {
         //System.out.printf("setARGB: argb=%08X\n", argb);
-        setARGB(getARGB_Alpha(argb), getARGB_Red(argb), getARGB_Green(argb), getARGB_Blue(argb));
+        setARGB(ColorUtils.getARGB_Alpha(argb), ColorUtils.getARGB_Red(argb), ColorUtils.getARGB_Green(argb), ColorUtils.getARGB_Blue(argb));
     }
 
     @Override
@@ -188,11 +188,11 @@ public class PixelImpl implements Pixel {
     @Override
     @JsonIgnore
     public final void setARGB(BufferedImage image, int x, int y) {
-        setARGB(getARGB(image, x, y));
+        setARGB(ColorUtils.getARGB(image, x, y));
     }
 
     private void addBrightnessInfo() {
-        int brightness = getBrightness(getRed().getValue(), getGreen().getValue(), getBlue().getValue());
+        int brightness = ColorUtils.getBrightness(getRed().getValue(), getGreen().getValue(), getBlue().getValue());
         getMinBrightness().setValue(brightness);
         getMaxBrightness().setValue(brightness);
     }

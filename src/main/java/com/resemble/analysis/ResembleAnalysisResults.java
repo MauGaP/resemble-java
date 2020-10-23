@@ -1,4 +1,4 @@
-package radomik.com.github.resemble.analysis;
+package com.resemble.analysis;
 
 import java.awt.image.BufferedImage;
 import java.time.Duration;

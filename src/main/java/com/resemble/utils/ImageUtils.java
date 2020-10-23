@@ -1,4 +1,4 @@
-package radomik.com.github.resemble.utils;
+package com.resemble.utils;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

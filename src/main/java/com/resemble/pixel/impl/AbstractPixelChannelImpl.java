@@ -1,10 +1,9 @@
-package radomik.com.github.resemble.pixel.impl;
+package com.resemble.pixel.impl;
 
-import radomik.com.github.resemble.pixel.Pixel;
-import radomik.com.github.resemble.pixel.PixelChannel;
-import radomik.com.github.resemble.pixel.PixelChannel.Channel;
-import radomik.com.github.resemble.pixel.PixelChannelChangeListener;
-import radomik.com.github.resemble.pixel.PixelChannelNeededListener;
+import com.resemble.pixel.Pixel;
+import com.resemble.pixel.PixelChannel;
+import com.resemble.pixel.PixelChannelChangeListener;
+import com.resemble.pixel.PixelChannelNeededListener;
 
 public abstract class AbstractPixelChannelImpl<T extends Number> implements PixelChannel<T> {
 

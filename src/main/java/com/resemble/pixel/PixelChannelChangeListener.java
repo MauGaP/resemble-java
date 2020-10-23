@@ -1,4 +1,4 @@
-package radomik.com.github.resemble.pixel;
+package com.resemble.pixel;
 
 public interface PixelChannelChangeListener<T extends Number> {
 

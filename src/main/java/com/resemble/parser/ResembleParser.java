@@ -1,7 +1,8 @@
-package radomik.com.github.resemble.parser;
+package com.resemble.parser;
 
-import static radomik.com.github.resemble.pixel.utils.ColorUtils.*;
-import radomik.com.github.resemble.utils.ImageUtils;
+import com.resemble.pixel.utils.ColorUtils;
+import com.resemble.utils.ImageUtils;
+
 import java.awt.image.BufferedImage;
 
 public abstract class ResembleParser {
@@ -21,12 +22,12 @@ public abstract class ResembleParser {
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                int argb = getARGB(sourceImageData, x, y);
-                int alpha = getARGB_Alpha(argb);
-                int red = getARGB_Red(argb);
-                int green = getARGB_Green(argb);
-                int blue = getARGB_Blue(argb);
-                int brightness = getBrightness(red, green, blue);
+                int argb = ColorUtils.getARGB(sourceImageData, x, y);
+                int alpha = ColorUtils.getARGB_Alpha(argb);
+                int red = ColorUtils.getARGB_Red(argb);
+                int green = ColorUtils.getARGB_Green(argb);
+                int blue = ColorUtils.getARGB_Blue(argb);
+                int brightness = ColorUtils.getBrightness(red, green, blue);
 
                 if (red == green && red == blue && alpha > 0) {
                     if (red == 0) {

@@ -1,4 +1,4 @@
-package radomik.com.github.resemble.parser;
+package com.resemble.parser;
 
 public class ResembleParserData {
 

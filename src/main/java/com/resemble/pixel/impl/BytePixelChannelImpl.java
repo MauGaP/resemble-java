@@ -1,4 +1,4 @@
-package radomik.com.github.resemble.pixel.impl;
+package com.resemble.pixel.impl;
 
 public class BytePixelChannelImpl extends AbstractPixelChannelImpl<Integer> {
 

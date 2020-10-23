@@ -1,4 +1,4 @@
-package radomik.com.github.resemble.analysis;
+package com.resemble.analysis;
 
 public class DiffBounds {
 
